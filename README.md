@@ -18,8 +18,8 @@ That link always gets the newest version. Windows 10 or 11, 64-bit.
 1. [Download Echo](https://github.com/killr789/echo-releases/releases/latest/download/Echo-setup.exe) and open the file.
 2. If Windows warns you, click **More info → Run anyway** (see [why](#windows-warns-me-about-the-download)).
 3. Pick a username and a display name. That's your account; nothing else is needed.
-4. Go to **Friends → Add friend**, click **Copy invite**, and send it to your friend (WhatsApp, Discord, anything).
-5. Your friend pastes it into **Friends → Add friend** on their Echo. You accept their request. Done: you can chat and call.
+4. Go to **Friends → Add friend**, click **Copy link**, and send the link to your friend (WhatsApp, Discord, anything).
+5. Your friend clicks the link: Echo opens and asks them to confirm. You get a popup: click **Accept**. Done: you can chat and call.
 
 The detailed steps follow.
 
@@ -82,17 +82,19 @@ You need each other once; after that Echo finds them by itself.
 **You:**
 
 1. Click **Friends** (top left) → **Add friend**.
-2. Under **Your invite**, click **Copy invite**. It looks like
-   `echo:1a2b3c…@ws://…` (or just `echo:1a2b3c…`).
+2. Under **Your invite link**, click **Copy link**. It starts with
+   `https://killr789.github.io/echo-releases/add/#…`.
 3. Send it to your friend however you like.
 
-**Your friend:**
+**Your friend:** clicks the link. The browser asks to open Echo (allow
+it), and Echo shows who invited them: they click **Send friend request**.
+No Echo yet? The page has the download: install it, create a profile, then
+click the link again.
 
-1. **Friends → Add friend**.
-2. Paste the invite into the box and click **Send request** (or
-   **Add server and send**).
+**You again:** a popup says they want to be your friend: click **Accept**
+(or **Deny**). If you closed it, it's under **Friends → Pending**.
 
-**You again:** under **Friends → Pending**, click the ✓ (**Accept**) next to their name.
+Pasting the link (or an Echo ID) into **Friends → Add friend** works too.
 
 When you're both online, the conversation header shows **Direct** (or
 **Relayed**), and messages go straight between your PCs.
@@ -102,14 +104,29 @@ When you're both online, the conversation header shows **Direct** (or
 You don't need to set anything up:
 
 - **Public relays (on by default):** Echo meets your friends through free
-  public relays. They only pass encrypted messages along: they can't read
-  them or tell who you talk to, but they see your IP address and when you're
-  online. You can switch this off in **Settings → Network**.
+  public relays. They only pass encrypted messages along, and every Echo
+  user's messages look alike to them: they can't read them, or see which
+  Echo user you are or who your friends are. They do see your IP address
+  (as any website does) and when you're online. One switch turns them off:
+  **Settings → Privacy & security**. You both need Echo 0.1.5 or newer for
+  this.
 - **Your own server (optional):** one friend can tick **Settings → Network →
   Host a server on this PC**. Echo opens the port on the router by itself
   (UPnP) and shows the address; the invite includes it. This also gives
   friends on strict networks (some mobile connections) a relay through the
   host.
+
+## Share your screen with sound
+
+In a call or voice channel, click the **screen** button. Pick **Clear
+text** (documents, code) or **Smooth motion** (games, videos), keep
+**Include sound** ticked, then click **Choose what to share**. Windows only
+shares sound with an **entire screen**: pick your screen and tick the sound
+box it shows. Friends hear your computer's sound in stereo (never their own
+voices back) and can set its volume on your screen's picture.
+
+Tip: use headphones, so your microphone doesn't pick up the sound a second
+time.
 
 ## 5. Updates
 
@@ -137,6 +154,10 @@ their overlay.
   Echo**, click **Firewall settings**, find Echo and tick **Public**.
 - Restart Echo on both PCs.
 
+**Clicking an invite link doesn't open Echo.**
+Make sure Echo 0.1.5 or newer is installed, then click **Open in Echo** on
+the page again. Or copy the link and paste it into **Friends → Add friend**.
+
 **Echo's window goes blank or closes.**
 Update to the latest version, and see the RivaTuner tip above.
 
@@ -151,6 +172,13 @@ you might come back: your identity, friends and messages are in it.
 Yes. There's no server to pay for. Echo runs on your PCs, and these
 downloads are hosted by GitHub for free.
 
+## Files from friends
+
+Echo marks the files you save as downloaded from the internet, so Windows
+SmartScreen and your antivirus check them before they open, and it asks
+before saving programs and scripts. Friends' PCs can be hacked too: only
+open programs you expected.
+
 ## For the curious
 
 Every installer here is signed with Echo's release key, and Echo checks that
@@ -162,4 +190,5 @@ the list Echo reads to find updates.
 
 - [**killr789**](https://github.com/killr789): creator and maintainer
 - **Claude** (Anthropic's AI): co-author of the code, including hosting
-  across the internet, invites, public relays and the firewall check
+  across the internet, invite links, public relays and their privacy,
+  screen-share sound and quality, and the firewall check
